@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequiredArgsConstructor
 public class NoteController {
 
-    private NoteUseCase noteUseCase;
+    private final NoteUseCase noteUseCase;
     
     @PostMapping("/note")
     public Object postThing(@Validated @RequestBody NoteReqDto noteReqDto, BindingResult bindingResult) {
