@@ -1,7 +1,10 @@
 package com.sshyuny.roadiary.adapter.dto;
 
+import java.time.LocalDateTime;
+
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,4 +16,11 @@ public class NoteReqDto {
 
     @Max(200)
     private Integer maxInt;
+
+    @NotNull
+    private LocalDateTime startTime;
+
+    @NotNull
+    private LocalDateTime endTime;
+    
 }

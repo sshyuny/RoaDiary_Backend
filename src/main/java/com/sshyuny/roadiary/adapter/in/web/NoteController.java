@@ -2,6 +2,7 @@ package com.sshyuny.roadiary.adapter.in.web;
 
 import com.sshyuny.roadiary.adapter.dto.NoteReqDto;
 import com.sshyuny.roadiary.application.port.in.NoteUseCase;
+import com.sshyuny.roadiary.exception.RoaDiaryIllegalArgumentException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,11 +25,10 @@ public class NoteController {
 
         if (bindingResult.hasErrors()) {
             log.info("error={}", bindingResult);
+            throw new RoaDiaryIllegalArgumentException();
         }
 
-        long notedNum = noteUseCase.addNote(noteReqDto);
-
-        if (notedNum == 0) return null;
+        noteUseCase.addNote(noteReqDto);
 
         return null;
     }

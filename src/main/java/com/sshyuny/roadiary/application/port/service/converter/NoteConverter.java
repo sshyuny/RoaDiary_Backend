@@ -7,12 +7,12 @@ import com.sshyuny.roadiary.domain.Note;
 public class NoteConverter {
     
     public static Note fromNoteReqDto(NoteReqDto noteReqDto) {
-        Note note = Note.create(noteReqDto.getContents());
+        Note note = Note.create(noteReqDto.getContents(), noteReqDto.getStartTime(), noteReqDto.getEndTime());
         return note;
     }
 
     public static NoteEntity fromDomainToEntity(Note note) {
-        NoteEntity noteEntity = NoteEntity.create(note.getContent());
+        NoteEntity noteEntity = NoteEntity.create(note.getContent(), note.getStartTime(), note.getEndTime());
         return noteEntity;
     }
 }
