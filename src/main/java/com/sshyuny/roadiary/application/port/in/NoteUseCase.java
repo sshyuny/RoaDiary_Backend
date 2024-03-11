@@ -4,6 +4,6 @@ import com.sshyuny.roadiary.adapter.dto.NoteReqDto;
 
 public interface NoteUseCase {
     
-    void addNote(NoteReqDto noteReqDto);
+    void addNote(NoteReqDto noteReqDto, Long memberId);
 
 }

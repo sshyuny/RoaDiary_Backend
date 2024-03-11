@@ -8,17 +8,19 @@ import lombok.Getter;
 public class Note {
     
     private Long id;
+    private Long memberId;
     private String content;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
 
-    public static Note create(String content, LocalDateTime startTime, LocalDateTime endTime) {
-        Note note = new Note(content, startTime, endTime);
+    public static Note create(Long memberId, String content, LocalDateTime startTime, LocalDateTime endTime) {
+        Note note = new Note(memberId, content, startTime, endTime);
         return note;
     }
 
     private Note() {};
-    private Note(String content, LocalDateTime startTime, LocalDateTime endTime) {
+    private Note(Long memberId, String content, LocalDateTime startTime, LocalDateTime endTime) {
+        this.memberId = memberId;
         this.content = content;
         this.startTime = startTime;
         this.endTime = endTime;

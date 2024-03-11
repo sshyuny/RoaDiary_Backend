@@ -13,7 +13,7 @@ public class NoteTest {
         LocalDateTime startTime = LocalDateTime.of(2024, 2, 7, 0, 0, 1);
         LocalDateTime endTime = LocalDateTime.of(2024, 2, 7, 0, 0, 0);
 
-        Note note = Note.create("test", startTime, endTime);
+        Note note = Note.create(1L, "test", startTime, endTime);
         
         assertThat(note.isNotNormalStartAndEndTime()).isTrue();
         assertThat(note.isNotValid()).isTrue();
@@ -27,7 +27,7 @@ public class NoteTest {
         LocalDateTime startTime = someTime;
         LocalDateTime endTime = sameTime;
 
-        Note note = Note.create("test", startTime, endTime);
+        Note note = Note.create(1L, "test", startTime, endTime);
         
         assertThat(note.isNotNormalStartAndEndTime()).isTrue();
         assertThat(note.isNotValid()).isTrue();
@@ -38,7 +38,7 @@ public class NoteTest {
         LocalDateTime startTime = LocalDateTime.of(2024, 2, 7, 0, 0, 0);
         LocalDateTime endTime = LocalDateTime.of(2024, 2, 10, 0, 0, 1);
 
-        Note note = Note.create("test", startTime, endTime);
+        Note note = Note.create(1L, "test", startTime, endTime);
         
         assertThat(note.isNotNormalStartAndEndTime()).isTrue();
         assertThat(note.isNotValid()).isTrue();

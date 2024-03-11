@@ -21,9 +21,9 @@ public class NoteService implements NoteUseCase {
     private final NoteOutPort noteOutPort;
 
     @Override
-    public void addNote(NoteReqDto noteReqDto) {
+    public void addNote(NoteReqDto noteReqDto, Long memberId) {
         
-        Note note = NoteConverter.fromNoteReqDto(noteReqDto);
+        Note note = NoteConverter.fromNoteReqDto(noteReqDto, memberId);
 
         if (note.isNotValid()) throw new RoaDiaryIllegalArgumentException();
 
