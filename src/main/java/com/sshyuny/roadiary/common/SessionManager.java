@@ -13,4 +13,10 @@ public class SessionManager {
         if (memberId == null) throw new RoaDiaryIllegalArgumentException("not logined");
         return (Long) memberId;
     }
+
+    public static boolean isLoginStatus(HttpSession session) {
+        Object memberId = session.getAttribute(MEMBER_ID);
+        if (memberId == null) return false;
+        return true;
+    }
 }
